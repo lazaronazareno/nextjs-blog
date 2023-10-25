@@ -3,7 +3,7 @@ import { slug } from 'github-slugger'
 interface Props {
   text: string
   main: boolean
-  key: string | number
+  key?: string | number
 }
 
 const Tag = ({ text, main }: Props) => {
