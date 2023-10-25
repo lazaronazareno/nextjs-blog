@@ -7,13 +7,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is;
-  style-src 'self' 'unsafe-inline';
-  img-src * blob: data:;
-  media-src *.s3.amazonaws.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://disqus.com/ https://c.disquscdn.com/ https://namidas-journey-blog.disqus.com/ https://referrer.disqus.com giscus.app analytics.umami.is;
+  style-src 'self' 'unsafe-inline' https://disqus.com/ https://referrer.disqus.com https://c.disquscdn.com/;
+  img-src * blob: data: https://referrer.disqus.com https://referrer.disqus.com;
+  media-src *.s3.amazonaws.com https://referrer.disqus.com https://referrer.disqus.com;
   connect-src *;
   font-src 'self';
-  frame-src giscus.app
+  frame-src giscus.app https://disqus.com/ https://c.disquscdn.com/ https://referrer.disqus.com
 `
 
 const securityHeaders = [
