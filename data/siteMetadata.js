@@ -5,10 +5,10 @@ const siteMetadata = {
   headerTitle: 'Namida´s Journey',
   description:
     'Explora tu pasion por el anime en Namida´s Journey. Descubre reseñas, análisis y opinion sobre tus animes favoritos.',
-  language: 'es-ar',
+  language: 'es-AR',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://namidas-journey-anime-blog.vercel.app',
+  siteRepo: 'https://github.com/lazaronazareno/nextjs-blog',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/logo.png',
   mastodon: '',

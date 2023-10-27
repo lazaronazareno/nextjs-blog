@@ -10,6 +10,8 @@ const MAX_DISPLAY = 2
 export default function Home({ posts }) {
   const mainPost = posts[0]
   const secondaryPost = posts[1]
+  console.log(formatDate(mainPost.date, siteMetadata.locale))
+
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -28,68 +30,80 @@ export default function Home({ posts }) {
 
         <div className="grid md:grid-cols-8 md:grid-rows-6 gap-2">
           <div className="col-span-8 row-span-4 md:col-span-6 md:row-span-6">
-            <div
-              className="relative rounded bg-contain bg-clip-content h-full min-h-[40vh] md:min-h-[65vh] bg-repeat-round"
-              style={{ backgroundImage: `url(${mainPost.images[0]})` }}
-            >
-              <h2 className="absolute top-4 right-4 text-xl rounded bg-white w-fit text-black p-2 font-bold leading-8 tracking-tight">
-                <Link href={`/blog/${mainPost.slug}`}>{mainPost.title}</Link>
-              </h2>
-              <div className="absolute bottom-4 left-2 flex flex-col gap-1">
-                <div className="flex flex-wrap gap-1 w-min">
-                  {mainPost.tags.map((tag) => (
-                    <Tag main key={tag} text={tag} />
-                  ))}
-                </div>
-                <div className="rounded-full bg-white w-fit text-black px-2 text-base font-medium leading-6 dark:text-black">
-                  <time dateTime={mainPost.date}>
-                    {formatDate(mainPost.date, siteMetadata.locale)}
-                  </time>
-                </div>
-              </div>
-              <Link
-                href={`/blog/${mainPost.slug}`}
-                aria-label={`Leer "${mainPost.title}"`}
-                className="absolute right-4 bottom-4 bg-white rounded-full p-1 hover:animate-pulse text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            {mainPost ? (
+              <div
+                className="relative rounded bg-contain bg-clip-content h-full min-h-[40vh] md:min-h-[65vh] bg-repeat-round"
+                style={{ backgroundImage: `url(${mainPost.images[0]})` }}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000000"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                <h2 className="absolute top-4 right-4 text-xl rounded bg-white w-fit text-black p-2 font-bold leading-8 tracking-tight">
+                  <Link href={`/blog/${mainPost.slug}`}>{mainPost.title}</Link>
+                </h2>
+                <div className="absolute bottom-4 left-2 flex flex-col gap-1">
+                  <div className="flex flex-wrap gap-1 w-min">
+                    {mainPost.tags.map((tag) => (
+                      <Tag main key={tag} text={tag} />
+                    ))}
+                  </div>
+                  <div className="rounded-full bg-white w-fit text-black px-2 text-base font-medium leading-6 dark:text-black">
+                    <time dateTime={mainPost.date}>
+                      {formatDate(mainPost.date, siteMetadata.locale)}
+                    </time>
+                  </div>
+                </div>
+                <Link
+                  href={`/blog/${mainPost.slug}`}
+                  aria-label={`Leer "${mainPost.title}"`}
+                  className="absolute right-4 bottom-4 bg-white rounded-full p-1 hover:animate-pulse text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  <path d="M7 17l9.2-9.2M17 17V7H7" />
-                </svg>
-              </Link>
-            </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#000000"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                  </svg>
+                </Link>
+              </div>
+            ) : (
+              <div className="relative rounded bg-contain bg-clip-content h-full min-h-[40vh] md:min-h-[65vh] bg-repeat-round">
+                Aun no hay un post disponible
+              </div>
+            )}
           </div>
           <div className="col-span-4 row-span-2 row-start-5 md:col-span-2 md:row-span-3 md:col-start-7">
-            <div className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded">
-              <div className="flex flex-wrap gap-1 px-2">
-                {secondaryPost.tags.map((tag) => (
-                  <Tag main={false} key={tag} text={tag} />
-                ))}
-              </div>
-              <h2 className="text-lg rounded text-black p-2 font-bold leading-8 tracking-tight">
+            {secondaryPost ? (
+              <div className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded">
+                <div className="flex flex-wrap gap-1 px-2">
+                  {secondaryPost.tags.map((tag) => (
+                    <Tag main={false} key={tag} text={tag} />
+                  ))}
+                </div>
+                <h2 className="text-lg rounded text-black p-2 font-bold leading-8 tracking-tight">
+                  <Link
+                    href={`/blog/${secondaryPost.slug}`}
+                    className="text-gray-100 dark:text-gray-100"
+                  >
+                    {secondaryPost.title}
+                  </Link>
+                </h2>
                 <Link
                   href={`/blog/${secondaryPost.slug}`}
-                  className="text-gray-100 dark:text-gray-100"
+                  className="self-end rounded-full border border-primary-500 py-2 px-4 me-2 hover:scale-105 text-gray-100 hover:text-primary-500"
                 >
-                  {secondaryPost.title}
+                  Ver más &rarr;
                 </Link>
-              </h2>
-              <Link
-                href={`/blog/${secondaryPost.slug}`}
-                className="self-end rounded-full border border-primary-500 py-2 px-4 me-2 hover:scale-105 text-gray-100 hover:text-primary-500"
-              >
-                Ver más &rarr;
-              </Link>
-            </div>
+              </div>
+            ) : (
+              <div className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded">
+                Publicidad
+              </div>
+            )}
           </div>
           <div className="col-span-4 row-span-2 col-start-5 row-start-5 md:col-span-2 md:row-span-3 md:col-start-7 md:row-start-4 rounded bg-primary-300 text-black">
             <TodaySchedule />

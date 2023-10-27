@@ -1,7 +1,7 @@
 import Calendar from '@/components/Calendar'
 import { genPageMetadata } from 'app/seo'
 
-export const metadata = genPageMetadata({ title: 'Schedule' })
+export const metadata = genPageMetadata({ title: 'Calendario' })
 
 export default function Schedule() {
   return (

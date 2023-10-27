@@ -7,13 +7,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://disqus.com/ https://c.disquscdn.com/ https://namidas-journey-blog.disqus.com/ https://referrer.disqus.com giscus.app analytics.umami.is;
-  style-src 'self' 'unsafe-inline' https://disqus.com/ https://referrer.disqus.com https://c.disquscdn.com/;
-  img-src * blob: data: https://referrer.disqus.com https://referrer.disqus.com;
-  media-src *.s3.amazonaws.com https://referrer.disqus.com https://referrer.disqus.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' disqus.com https://namidas-journey-blog.disqus.com https://referrer.disqus.com https://c.disquscdn.com/ https://launchpad-wrapper.privacymanager.io/ giscus.app analytics.umami.is https://va.vercel-scripts.com;
+  style-src 'self' 'unsafe-inline' disqus.com;
+  img-src * blob: data: disqus.com https://referrer.disqus.com;
+  media-src *.s3.amazonaws.com disqus.com https://referrer.disqus.com;
   connect-src *;
   font-src 'self';
-  frame-src giscus.app https://disqus.com/ https://c.disquscdn.com/ https://referrer.disqus.com
+  frame-src giscus.app disqus.com https://referrer.disqus.com
 `
 
 const securityHeaders = [
