@@ -1,15 +1,16 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Namida´s Journey',
+  title: 'Namida´s Journey Anime Blog',
   author: 'ZaroFMD',
   headerTitle: 'Namida´s Journey',
   description:
     'Explora tu pasion por el anime en Namida´s Journey. Descubre reseñas, análisis y opinion sobre tus animes favoritos.',
   language: 'es-AR',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://namidas-journey-anime-blog.vercel.app',
+  siteUrl: 'https://namidas-anime-blog.vercel.app/',
   siteRepo: 'https://github.com/lazaronazareno/nextjs-blog',
   siteLogo: '/static/images/logo.png',
+  image: '/static/images/logo.png',
   socialBanner: '/static/images/logo.png',
   mastodon: '',
   email: '',
