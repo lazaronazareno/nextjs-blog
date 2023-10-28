@@ -10,7 +10,6 @@ const MAX_DISPLAY = 2
 export default function Home({ posts }) {
   const mainPost = posts[0]
   const secondaryPost = posts[1]
-  console.log(formatDate(mainPost.date, siteMetadata.locale))
 
   return (
     <>

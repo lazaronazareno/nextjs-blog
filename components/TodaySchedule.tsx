@@ -1,3 +1,5 @@
+import { GET } from 'app/api/cron/today/route'
+
 const SEASONAL_SCHEDULE = [
   {
     day: 'Lunes',
@@ -46,11 +48,9 @@ const SEASONAL_SCHEDULE = [
   },
 ]
 
-export default function TodaySchedule() {
-  const today = new Date().getDay()
-
-  const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
-  const todayName = daysOfWeek[today]
+export default async function TodaySchedule() {
+  const fetchToday = await (await GET()).json().then((test) => test)
+  const todayName = fetchToday.message
 
   const todayAnimes = SEASONAL_SCHEDULE.find((daySchedule) => daySchedule.day === todayName)
 
