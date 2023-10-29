@@ -1,4 +1,5 @@
-import { GET } from 'app/api/cron/today/route'
+'use client'
+import { useEffect, useState } from 'react'
 
 const SEASONAL_SCHEDULE = [
   {
@@ -48,9 +49,16 @@ const SEASONAL_SCHEDULE = [
   },
 ]
 
-export default async function TodaySchedule() {
-  const fetchToday = await (await GET()).json().then((test) => test)
-  const todayName = fetchToday.message
+export default function TodaySchedule() {
+  const [today, setToday] = useState<Date>(new Date())
+  const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
+
+  useEffect(() => {
+    const tempToday = new Date()
+    setToday(tempToday)
+  }, [])
+
+  const todayName = daysOfWeek[today.getDay()]
 
   const todayAnimes = SEASONAL_SCHEDULE.find((daySchedule) => daySchedule.day === todayName)
 
