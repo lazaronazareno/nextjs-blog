@@ -7,7 +7,7 @@ interface Props {
   fanservice: number
 }
 
-const GENRE_COLOR = {
+export const GENRE_COLOR = {
   fantasy: {
     name: 'Fantasía',
     color: 'border-blue-700',

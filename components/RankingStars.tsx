@@ -1,8 +1,9 @@
 interface Props {
   ranking: number
+  size?: boolean
 }
 
-export default function RankingStars({ ranking }: Props) {
+export default function RankingStars({ ranking, size }: Props) {
   const clampedRating = Math.min(5, Math.max(1, ranking))
   const fullStars = Math.floor(clampedRating)
   const hasHalfStar = clampedRating - fullStars === 0.5
@@ -15,8 +16,8 @@ export default function RankingStars({ ranking }: Props) {
           <svg
             className="text-yellow-400"
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width={`${size ? '50' : '16'}`}
+            height={`${size ? '36' : '16'}`}
             fill="currentColor"
             viewBox="0 0 16 16"
           >
@@ -29,8 +30,8 @@ export default function RankingStars({ ranking }: Props) {
           <svg
             className="text-yellow-400"
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width={`${size ? '50' : '16'}`}
+            height={`${size ? '36' : '16'}`}
             fill="currentColor"
             viewBox="0 0 16 16"
           >
@@ -44,8 +45,8 @@ export default function RankingStars({ ranking }: Props) {
           <svg
             className="text-yellow-400"
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width={`${size ? '50' : '16'}`}
+            height={`${size ? '36' : '16'}`}
             fill="currentColor"
             viewBox="0 0 16 16"
           >

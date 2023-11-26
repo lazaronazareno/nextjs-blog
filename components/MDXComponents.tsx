@@ -6,6 +6,9 @@ import Image from './Image'
 import CustomLink from './Link'
 import PostImageFooter from './PostImageFooter'
 import TablePost from './TablePost'
+import ReviewTitle from './ReviewTitle'
+import ReviewStars from './ReviewStars'
+import ReviewImageFooter from './ReviewImageFooter'
 
 export const components: MDXComponents = {
   Image,
@@ -15,4 +18,7 @@ export const components: MDXComponents = {
   BlogNewsletterForm,
   PostImageFooter,
   TablePost,
+  ReviewTitle,
+  ReviewStars,
+  ReviewImageFooter,
 }

@@ -23,11 +23,11 @@ export default function Home({ posts }) {
             href={'/blog'}
             className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
           >
-            Ver todo &rarr;
+            Ver todas &rarr;
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-8 md:grid-rows-6 gap-2">
+        <div className="grid md:grid-cols-8 md:grid-rows-6 gap-2 !border-t-0">
           <div className="col-span-8 row-span-4 md:col-span-6 md:row-span-6">
             {mainPost ? (
               <div
@@ -77,13 +77,24 @@ export default function Home({ posts }) {
           </div>
           <div className="col-span-4 row-span-2 row-start-5 md:col-span-2 md:row-span-3 md:col-start-7">
             {secondaryPost ? (
-              <div className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded">
-                <div className="flex flex-wrap gap-1 px-2">
+              <div
+                className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded"
+                style={{
+                  backgroundImage: `url(${secondaryPost.images[0]})`,
+                  backgroundSize: 'cover',
+                }}
+              >
+                <div className="rounded-full bg-white w-fit text-black px-2 text-base font-medium leading-6 dark:text-black">
+                  <time dateTime={secondaryPost.date}>
+                    {formatDate(secondaryPost.date, siteMetadata.locale)}
+                  </time>
+                </div>
+                <div className="flex flex-wrap gap-1 bg-black w-fit ">
                   {secondaryPost.tags.map((tag) => (
                     <Tag main={false} key={tag} text={tag} />
                   ))}
                 </div>
-                <h2 className="text-lg rounded text-black p-2 font-bold leading-8 tracking-tight">
+                <h2 className="text-lg bg-black w-fit text-black p-2 font-bold leading-8 tracking-tight">
                   <Link
                     href={`/blog/${secondaryPost.slug}`}
                     className="text-gray-100 dark:text-gray-100"
@@ -93,7 +104,7 @@ export default function Home({ posts }) {
                 </h2>
                 <Link
                   href={`/blog/${secondaryPost.slug}`}
-                  className="self-end rounded-full border border-primary-500 py-2 px-4 me-2 hover:scale-105 text-gray-100 hover:text-primary-500"
+                  className="self-end rounded-full border bg-orange-500 border-black py-2 px-4 me-2 hover:scale-105 text-black hover:text-gray-100 hover:border-white"
                 >
                   Ver más &rarr;
                 </Link>
