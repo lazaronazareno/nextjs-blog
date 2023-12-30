@@ -9,6 +9,8 @@ import TablePost from './TablePost'
 import ReviewTitle from './ReviewTitle'
 import ReviewStars from './ReviewStars'
 import ReviewImageFooter from './ReviewImageFooter'
+import NormalOpeningCard from './NormalOpeningCard'
+import BestOpeningCard from './BestOpeningCard'
 
 export const components: MDXComponents = {
   Image,
@@ -21,4 +23,6 @@ export const components: MDXComponents = {
   ReviewTitle,
   ReviewStars,
   ReviewImageFooter,
+  NormalOpeningCard,
+  BestOpeningCard,
 }
