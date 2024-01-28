@@ -1,53 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-
-const SEASONAL_SCHEDULE = [
-  {
-    day: 'Lunes',
-    schedule: ['Watashi no Oshi wa Akuyaku Reijou.'],
-  },
-  {
-    day: 'Martes',
-    schedule: ['Tokyo Revengers', 'Helck'],
-  },
-  {
-    day: 'Miercoles',
-    schedule: ['Kage no Jitsuryokusha ni Naritakute! 2', '16bit Sensation: Another Layer'],
-  },
-  {
-    day: 'Jueves',
-    schedule: ['Dr. Stone: New World 2', 'Jujutsu Kaisen 2', 'Rurouni Kenshin (2023)'],
-  },
-  {
-    day: 'Viernes',
-    schedule: [
-      'Tate no Yuusha no Nariagari 3',
-      'Keikenzumi na Kimi to, Keiken Zero na Ore ga, Otsukiai suru Hanashi',
-      'Sousou no Frieren',
-      'Hametsu no Oukoku',
-      'Undead Unluck',
-      'Kanojo mo Kanojo 2',
-    ],
-  },
-  {
-    day: 'Sabado',
-    schedule: [
-      'Saihate no Paladin: Tetsusabi no Yama no Ou',
-      'Ragna Crimson',
-      'Spy x Family 2',
-      'One Piece',
-    ],
-  },
-  {
-    day: 'Domingo',
-    schedule: [
-      'Captain Tsubasa 2',
-      'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su',
-      'Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo',
-      'Zom 100: Zombie ni Naru made ni Shitai 100 no Koto',
-    ],
-  },
-]
+import { SEASONAL_SCHEDULE } from './SEASONAL_SCHEDULE'
 
 export default function TodaySchedule() {
   const [today, setToday] = useState<Date>(new Date())
