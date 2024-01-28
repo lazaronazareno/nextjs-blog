@@ -3,37 +3,39 @@ import React from 'react'
 const SEASONAL_SCHEDULE = [
   {
     day: 'Lunes',
-    schedule: ['Watashi no Oshi wa Akuyaku Reijou.'],
+    schedule: ['Tsukimichi'],
   },
   {
     day: 'Martes',
-    schedule: ['Tokyo Revengers', 'Helck'],
+    schedule: ['Akuyaku Reijou Level 99'],
   },
   {
     day: 'Miercoles',
-    schedule: ['Kage no Jitsuryokusha ni Naritakute! 2', '16bit Sensation: Another Layer'],
+    schedule: ['ClassRoom of the Elite 3', 'Metallic Rouge'],
   },
   {
     day: 'Jueves',
-    schedule: ['Dr. Stone: New World 2', 'Jujutsu Kaisen 2', 'Rurouni Kenshin (2023)'],
+    schedule: ['Dungeon Meshi', 'Majo to Yajuu'],
   },
   {
     day: 'Viernes',
     schedule: [
-      'Tate no Yuusha no Nariagari 3',
-      'Keikenzumi na Kimi to, Keiken Zero na Ore ga, Otsukiai suru Hanashi',
+      'Sasaki To Pii-chan',
+      'Chiyu Mahou no Machigatta Tsukaikata',
       'Sousou no Frieren',
-      'Hametsu no Oukoku',
       'Undead Unluck',
-      'Kanojo mo Kanojo 2',
     ],
   },
   {
     day: 'Sabado',
     schedule: [
-      'Saihate no Paladin: Tetsusabi no Yama no Ou',
+      'Yubisaki to Renren',
       'Ragna Crimson',
-      'Spy x Family 2',
+      'Mashle 2',
+      'Bucchigiri?!',
+      'Solo Leveling',
+      'Boku no Kokoro no Yabai Yatsu 2',
+      'Kusuriya no Hitorigoto',
       'One Piece',
     ],
   },
@@ -42,8 +44,7 @@ const SEASONAL_SCHEDULE = [
     schedule: [
       'Captain Tsubasa 2',
       'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su',
-      'Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo',
-      'Zom 100: Zombie ni Naru made ni Shitai 100 no Koto',
+      'Loop 7-kaime',
     ],
   },
 ]
