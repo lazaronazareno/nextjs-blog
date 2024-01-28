@@ -11,6 +11,7 @@ import ReviewStars from './ReviewStars'
 import ReviewImageFooter from './ReviewImageFooter'
 import NormalOpeningCard from './NormalOpeningCard'
 import BestOpeningCard from './BestOpeningCard'
+import Spoiler from './Spoiler'
 
 export const components: MDXComponents = {
   Image,
@@ -25,4 +26,5 @@ export const components: MDXComponents = {
   ReviewImageFooter,
   NormalOpeningCard,
   BestOpeningCard,
+  Spoiler,
 }

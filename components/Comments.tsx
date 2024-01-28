@@ -8,7 +8,14 @@ export default function Comments({ slug }: { slug: string }) {
   const [loadComments, setLoadComments] = useState(false)
   return (
     <>
-      {!loadComments && <button onClick={() => setLoadComments(true)}>Load Comments</button>}
+      {!loadComments && (
+        <button
+          className="border border-black rounded-lg p-4 round bg-primary-500 text-black hover:border-primary-600 hover:bg-inherit hover:text-inherit"
+          onClick={() => setLoadComments(true)}
+        >
+          Cargar Comentarios
+        </button>
+      )}
       {siteMetadata.comments && loadComments && (
         <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
       )}

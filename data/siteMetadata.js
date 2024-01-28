@@ -2,9 +2,8 @@
 const siteMetadata = {
   title: 'Namida´s Journey Anime Blog',
   author: 'ZaroFMD',
-  headerTitle: 'Namida´s Journey',
-  description:
-    'Explora tu pasion por el anime en Namida´s Journey. Descubre reseñas, análisis y opinion sobre tus animes favoritos.',
+  headerTitle: 'Namida´s Journey Anime Blog',
+  description: 'Anime Blog Namida´s Journey. Reseñas - Review - Opinion - Análisis - Openings',
   language: 'es-AR',
   theme: 'system', // system, dark or light
   siteUrl: 'https://namidas-anime-blog.vercel.app/',
