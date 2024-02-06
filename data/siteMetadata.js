@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'Anime Blog Namida´s Journey. Reseñas - Review - Opinion - Análisis - Openings',
   language: 'es-AR',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://namidas-anime-blog.vercel.app/',
+  siteUrl: 'https://namidas-anime-blog.vercel.app',
   siteRepo: 'https://github.com/lazaronazareno/nextjs-blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/logo.png',
