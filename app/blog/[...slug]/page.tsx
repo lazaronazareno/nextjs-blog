@@ -88,9 +88,10 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
     return (
       <div className="mt-24 text-center">
         <PageTitle>
-          Under Construction{' '}
+          Parece que la url está mal o una publicacion eliminada... en todo caso, vuelve al inicio
+          para seguir navegando{' '}
           <span role="img" aria-label="roadwork sign">
-            🚧
+            😉
           </span>
         </PageTitle>
       </div>
