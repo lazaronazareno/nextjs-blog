@@ -12,7 +12,7 @@ export default function Head() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="google-site-verification" content="7oQ2sshvhrZ61E1a9pR7Q53w1gapsYMwZgqE0_q70-c" />
-      <meta name="google-adsense-account" content="ca-pub-3902388392934582"></meta>
+      <meta name="google-adsense-account" content="ca-pub-3902388392934582" />
     </>
   )
 }
