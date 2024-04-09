@@ -78,10 +78,12 @@ export default function Home({ posts }) {
           <div className="col-span-4 row-span-2 row-start-5 md:col-span-2 md:row-span-3 md:col-start-7">
             {secondaryPost ? (
               <div
-                className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded"
+                className="flex flex-col justify-end gap-2 bg-sky-800 h-full rounded pb-1"
                 style={{
                   backgroundImage: `url(${secondaryPost.images[0]})`,
-                  backgroundSize: 'cover',
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'top',
+                  backgroundRepeat: 'no-repeat',
                 }}
               >
                 <div className="rounded-full bg-white w-fit text-black px-2 text-base font-medium leading-6 dark:text-black">
