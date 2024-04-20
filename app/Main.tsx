@@ -2,14 +2,17 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
-/* import NewsletterForm from 'pliny/ui/NewsletterForm' */
-import TodaySchedule from '@/components/TodaySchedule'
+import NewsletterForm from '@/components/NewsletterForm'
+import SecondaryPost from '@/components/SecondaryPost'
+import Image from 'next/image'
 
 const MAX_DISPLAY = 2
+const formId: string | undefined = process.env.CONVERTKIT_FORM_ID
 
 export default function Home({ posts }) {
   const mainPost = posts[0]
   const secondaryPost = posts[1]
+  const thirdPost = posts[2]
 
   return (
     <>
@@ -30,10 +33,17 @@ export default function Home({ posts }) {
         <div className="grid md:grid-cols-8 md:grid-rows-6 gap-2 !border-t-0">
           <div className="col-span-8 row-span-4 md:col-span-6 md:row-span-6">
             {mainPost ? (
-              <div
-                className="relative rounded bg-contain bg-clip-content h-full min-h-[40vh] md:min-h-[65vh] bg-repeat-round"
-                style={{ backgroundImage: `url(${mainPost.images[0]})` }}
-              >
+              <div className="relative rounded bg-contain bg-clip-content h-full min-h-[40vh] md:min-h-[65vh] bg-repeat-round">
+                <Link href={`/blog/${mainPost.slug}`}>
+                  <Image
+                    title={mainPost.title}
+                    src={mainPost.images[0]}
+                    alt={mainPost.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-fill"
+                  />
+                </Link>
                 <h2 className="absolute top-4 right-4 text-xl rounded bg-white w-fit text-black p-2 font-bold leading-8 tracking-tight">
                   <Link href={`/blog/${mainPost.slug}`}>{mainPost.title}</Link>
                 </h2>
@@ -75,51 +85,8 @@ export default function Home({ posts }) {
               </div>
             )}
           </div>
-          <div className="col-span-4 row-span-2 row-start-5 md:col-span-2 md:row-span-3 md:col-start-7">
-            {secondaryPost ? (
-              <div
-                className="flex flex-col justify-end gap-2 bg-sky-800 h-full rounded pb-1"
-                style={{
-                  backgroundImage: `url(${secondaryPost.images[0]})`,
-                  backgroundSize: 'contain',
-                  backgroundPosition: 'top',
-                  backgroundRepeat: 'no-repeat',
-                }}
-              >
-                <div className="rounded-full bg-white w-fit text-black px-2 text-base font-medium leading-6 dark:text-black">
-                  <time dateTime={secondaryPost.date}>
-                    {formatDate(secondaryPost.date, siteMetadata.locale)}
-                  </time>
-                </div>
-                <div className="flex flex-wrap gap-1 bg-black w-fit ">
-                  {secondaryPost.tags.map((tag) => (
-                    <Tag main={false} key={tag} text={tag} />
-                  ))}
-                </div>
-                <h2 className="text-lg bg-black w-fit text-black p-2 font-bold leading-8 tracking-tight">
-                  <Link
-                    href={`/blog/${secondaryPost.slug}`}
-                    className="text-gray-100 dark:text-gray-100"
-                  >
-                    {secondaryPost.title}
-                  </Link>
-                </h2>
-                <Link
-                  href={`/blog/${secondaryPost.slug}`}
-                  className="self-end rounded-full border bg-orange-500 border-black py-2 px-4 me-2 hover:scale-105 text-black hover:text-gray-100 hover:border-white"
-                >
-                  Ver más &rarr;
-                </Link>
-              </div>
-            ) : (
-              <div className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded">
-                Publicidad
-              </div>
-            )}
-          </div>
-          <div className="col-span-4 row-span-2 col-start-5 row-start-5 md:col-span-2 md:row-span-3 md:col-start-7 md:row-start-4 rounded bg-primary-300 text-black">
-            <TodaySchedule />
-          </div>
+          <SecondaryPost post={secondaryPost} color={false} />
+          <SecondaryPost post={thirdPost} color={true} />
         </div>
       </div>
 
@@ -135,11 +102,11 @@ export default function Home({ posts }) {
         </div>
       )} */}
 
-      {/*       {siteMetadata.newsletter?.provider && (
+      {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+          <NewsletterForm formId={formId!} />
         </div>
-      )} */}
+      )}
     </>
   )
 }
