@@ -39,8 +39,8 @@ export default function Home({ posts }) {
                     title={mainPost.title}
                     src={mainPost.images[0]}
                     alt={mainPost.title}
-                    width={600}
-                    height={400}
+                    width={1200}
+                    height={800}
                     className="w-full h-full object-fill"
                   />
                 </Link>
