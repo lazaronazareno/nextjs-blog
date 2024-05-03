@@ -26,9 +26,9 @@ const SecondaryPost = ({ post, color }) => {
               title={post.title}
               src={post.images[0]}
               alt={post.title}
-              width={400}
-              height={200}
-              className="w-full h-full object-fill"
+              width={282}
+              height={180}
+              className="w-full h-full object-fill max-h-[180px]"
             />
           </Link>
 
@@ -40,12 +40,12 @@ const SecondaryPost = ({ post, color }) => {
               {post.title}
             </Link>
           </h2>
-          <Link
+          {/*           <Link
             href={`/blog/${post.slug}`}
             className="self-end rounded-full border bg-orange-500 border-black py-2 px-4 me-2 hover:scale-105 text-black hover:text-gray-100 hover:border-white"
           >
             Ver más &rarr;
-          </Link>
+          </Link> */}
         </div>
       ) : (
         <div className="flex flex-col justify-center gap-4 bg-sky-800 h-full rounded">

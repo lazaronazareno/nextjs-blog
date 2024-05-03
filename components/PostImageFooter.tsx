@@ -5,6 +5,7 @@ interface Props {
   study: string
   ranking: number
   fanservice: number
+  background: boolean
 }
 
 export const GENRE_COLOR = {
@@ -76,11 +77,17 @@ export const GENRE_COLOR = {
     name: 'Yuri',
     color: 'border-rose-300',
   },
+  music: {
+    name: 'Musical',
+    color: 'border-cyan-400',
+  },
 }
 
-export default function PostImageFooter({ genre, study, ranking, fanservice }: Props) {
+export default function PostImageFooter({ genre, study, ranking, fanservice, background }: Props) {
   return (
-    <div className="flex w-full flex-col md:flex-row justify-evenly flex-wrap text-left items-center">
+    <div
+      className={`flex w-full flex-col md:flex-row justify-evenly flex-wrap text-left items-center py-1 ${background ? 'dark:bg-slate-800 bg-slate-200' : ''}`}
+    >
       <div className="flex gap-1 flex-wrap justify-center items-center">
         Generos:
         {genre.map((genre) => {

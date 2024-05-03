@@ -41,7 +41,7 @@ export default function Home({ posts }) {
                     alt={mainPost.title}
                     width={1200}
                     height={800}
-                    className="w-full h-full object-fill"
+                    className="w-full h-full object-fill md:object-cover xl:object-fill"
                   />
                 </Link>
                 <h2 className="absolute top-4 right-4 text-xl rounded bg-white w-fit text-black p-2 font-bold leading-8 tracking-tight">
